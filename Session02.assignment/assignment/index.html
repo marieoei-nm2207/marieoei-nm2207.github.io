@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/appstyle.css">
+        <!-- Use script element to indicate path to our javascript files -->
+        <script defer type="text/javascript" src="appscripts/main.js" >
+        </script>
+    </head>
+
+    <body>
+        <div id="contactForm">
+            <img src="../assignment/resources/lumenprint.jpg">
+            <div id="formText">
+            <h3> Don't Be Shy, Contact Us! </h3>
+            <p id="introText"><em>
+                Have a question?
+                Fill in our little form below and we'll get back to you in 2-3 working days!
+            </em></p>
+            
+            <table>
+                <tr>
+                    <td><p>Name: <strong id="asterisk">*</strong><br>
+                        <input id="box" type="text" name="name" value="Enter your name here"></p></td>
+                    <td><p>Email Address: <strong id="asterisk">*</strong><br>
+                        <input id="box" type="text" name="email" value="johndoe@example.com"></p></td>
+                </tr>
+                <tr>
+                    <td><p>Contact Number: <br>
+                        <input id="box" type="text" name="phoneNo"></p></td>
+                    <td><p> Enquiry: <br>
+                            <select id="enquiry" name="enquiry">
+                                <option>General</option>
+                                <option>Technical</option>
+                                <option>Careers</option>
+                            </select>
+                        </p></td>
+                </tr>
+            </table>  
+
+            <p>Are you a member?<br>
+                <input type="radio" name="member" value="Yes">Yes<br>
+                <input type="radio" name="member" value="No">No<br>
+                </p>
+
+            <p>Message: <strong id="asterisk">*</strong><br>
+                <textarea id="msg" name="msg">Your message must be greater than 20 characters</textarea>
+            </p>
+
+            <p id="smallText"><strong id="asterisk">*</strong> <em>indicates a required field</em></p>
+            <p><input id="submit" type="submit" name="submit" value="Submit"></p>
+        </div> </div>
+    </body>
+
+
+</html>
+

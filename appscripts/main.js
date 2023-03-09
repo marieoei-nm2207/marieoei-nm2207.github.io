@@ -356,5 +356,7 @@ function playNote(e){
     }  
 }
 
-// ------- GAME 3 - sort out the berries
+// ------- GAME 3 - collect/sort out the berries
 // gameState = 8;
+// have a timer event, maybe 25 seconds; player has to either sort or collect 20 berries within the timing
+// when timer runs out and the game is uncompleted, reset

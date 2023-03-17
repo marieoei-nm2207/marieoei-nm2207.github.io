@@ -242,7 +242,7 @@ function playGames() {
 
 // ------- GAME 2 - play the keys according to the music
 let mainPiano = document.getElementById("mainPiano");
-mainPiano.style.display = "none";
+/* mainPiano.style.display = "none"; */
 let listen = document.createElement("button");
     listen.className = "button";
     listen.id = "lisbutton";

@@ -305,7 +305,7 @@ h1 {
     width: 60%;
     height: 35%;
     margin: auto;
-    display: block;
+    display: none;
 }
 
 #scoreText {

@@ -68,12 +68,16 @@ body {
     bottom: 5%;
 }
 
+#content {
+    position: absolute;
+}
+
 h1 {
     color:rgb(7, 65, 30);
     font-size: 48px;
     text-shadow: -1px 0 5px #ffffff85, 0 1px 5px #ffffff85, 1px 0 5px #ffffff85;
     max-width: 850px;
-    margin-top: 100px;
+    margin-top: 75px;
     left: 50%;
     text-align: center;
 }
@@ -84,6 +88,7 @@ h1 {
     justify-content: center;
     width: 100%;
     display: flex;
+    margin-bottom: 5%;
 }
 
 #soundClick {
@@ -117,6 +122,7 @@ h1 {
     margin-top: 200px;
     color: rgb(255, 255, 255);
     transition-duration: 0.4s;
+    cursor: pointer;
 }
 
 .gbutton{
@@ -128,6 +134,7 @@ h1 {
     margin: 50px;
     color: rgb(255, 255, 255);
     transition-duration: 0.4s;
+    cursor: pointer;
 }
 
 .gbutton:hover, .button:hover {
@@ -137,17 +144,25 @@ h1 {
 
 #buttonContainer {
     position: relative; /* Ensure the z-index works */
-    z-index: 2; /* Higher than child1 */
+    z-index: 115; /* Higher than child1 */
   }
 
 #buttonToHome {
     margin-top: 300px;
+    cursor: pointer;
+}
+
+#lisbutton{
+    /* margin-bottom: 250px; */
+    margin-top: 0;
+    z-index: 120;
+    cursor: pointer;
 }
 
 .parent > #blob {
     position: relative;
     background-position-y: top;
-    z-index: 3; /* Higher than buttonContainer and child1 */
+    z-index: 10; /* Higher than buttonContainer and child1 */
 }
 
 .blobName {
@@ -157,6 +172,7 @@ h1 {
     border: none;
     border-bottom: 2px solid rgb(54, 98, 68);
     margin: auto;
+    margin-bottom: 0;
     padding-top: 50px;
     width: 40%;
     z-index: 1000;
@@ -174,6 +190,7 @@ h1 {
     margin-top: 50px;
     margin-bottom: 50px;
     position: absolute;
+    z-index: 200;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -195,8 +212,7 @@ h1 {
     display: flex;
     position: relative;
     margin: auto;
-    margin-top: 75%;
-    z-index: 100;
+    margin-top: 50%;
 }
 
 .message {
@@ -206,4 +222,94 @@ h1 {
     margin-right: 5%;
     color: white;
     font-family: 'Courier New', Courier, monospace;
+}
+
+/* css from session 06 practice */
+.keys {
+    display: block;
+    width: 100%;
+    height: 250px;
+    max-width: 880px;
+    position: relative;
+    margin: 40px auto 0;
+    cursor: none;
+    z-index: 100;
+}
+
+.key {
+    position: relative;
+    border: 4px solid black;
+    border-radius: .5rem;
+    
+    display: inline-block;
+    box-sizing: border-box;
+    z-index: 101;
+}
+
+.key:not(.sharp) {
+    float: left;
+    width: 10%;
+    height: 100%;
+    background: rgba(255, 255, 255, .8);    
+}
+
+.key.sharp {
+    position: absolute;
+    width: 6%;
+    height: 60%;
+    background: #000;
+    color: #eee;
+    top: 0;
+    z-index: 102;
+}
+
+.key[data-key="87"] {
+    left: 7%;
+}
+
+.key[data-key="69"] {
+    left: 17%;
+}
+
+.key[data-key="84"]  {
+    left: 37%;
+}
+
+.key[data-key="89"] {
+    left: 47%;
+}
+
+.key[data-key="85"] {
+    left: 57%;    
+}
+
+.key[data-key="79"] {
+    left: 77%;    
+}
+
+.key[data-key="80"] {
+    left: 87%;    
+}
+
+.kbKey {
+    display: block;
+    width: 100%;
+    color: #838383;
+    opacity: 1;
+    position: absolute;
+    bottom: 7px;
+    font-size: 20px;
+}
+
+#mainPiano {
+    width: 60%;
+    height: 35%;
+    margin: auto;
+    display: block;
+}
+
+#scoreText {
+    font-size: 48px;
+    color: rgb(0, 0, 0);
+    opacity: 0.5;
 }

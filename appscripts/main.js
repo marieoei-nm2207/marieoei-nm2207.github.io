@@ -399,7 +399,10 @@ game3.addEventListener('click', function(){
         intText.innerHTML = "";
         click2Cont.innerHTML = "";
 
-
+        let scoreText = document.createElement("p");
+        mainDiv.appendChild(scoreText);
+        scoreText.id = "scoreText";
+        scoreText.innerHTML = score;
     });
     
 });
@@ -459,11 +462,11 @@ class Basket {
     }
 }
 
-basket.push(new Basket(canvas.width/2 - 120/2, canvas.height - 100 - 30, 120, 100));
+basket.push(new Basket(canvas.width/2 - 120/2, canvas.height - 100 - 30, 120, 100)); // setting the width and height of the basket
 
 // setting interval between each berry falling to 2 seconds
 setInterval(() => {
-    let berryXPos = Math.random() * ((canvas.width-60)-60)+60;
+    let berryXPos = Math.random() * ((canvas.width-60)-60)+60; // to stop the berries from animating at the edge of the screen
     berries.push(new Berry(berryXPos, -10, 30));
 
 }, 500);
@@ -494,11 +497,6 @@ function animate() {
             berries.splice(index, 1);
             score++;
             console.log(score);
-
-            let scoreText = document.createElement("p");
-            mainDiv.appendChild(scoreText);
-            scoreText.id = "scoreText";
-            scoreText.innerHTML = score;
         }
     })
 

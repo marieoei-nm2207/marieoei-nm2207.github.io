@@ -366,7 +366,7 @@ function playNote(e){
 // have a timer event, maybe 25 seconds; player has to either sort or collect 20 berries within the timing
 // when timer runs out and the game is uncompleted, reset
 // Fruit Catch Game: https://www.youtube.com/watch?v=sDlrNT0myIo, https://www.youtube.com/watch?v=UdSVPgNkOyU
-let startGame3 = document.createElement("button");
+/* let startGame3 = document.createElement("button");
 startGame3.className = "button";
 startGame3.id = "g3StartButton";
 startGame3.innerHTML = "Start";
@@ -509,7 +509,7 @@ animate();
 document.addEventListener('mousemove', function(e){
     let x = e.clientX - canvas.offsetLeft; // subtract canvas offset to get relative position
     basket[0].x = x - basket[0].width - 50; // update x-position of the center of the basket
-});
+}); */
 
 
 // when all games have been played, show the options for home

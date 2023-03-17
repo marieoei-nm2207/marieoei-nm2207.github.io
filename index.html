@@ -19,6 +19,7 @@
       </div>
 
       <div id="content"></div>
+      <canvas id="catchGame"></canvas>
 
       <div id="click2ContDiv">
         <p id="click2Cont">Click to continue.</p>
@@ -30,8 +31,83 @@
       <p id="soundClick">🎶 Click here to start/stop the background music. 🎶</p>
     </div>
 
-    
+    <!-- html from session 06 practice -->
+    <section id="mainPiano">
+      <div class="keys">
+        <div data-key="65" class="key" data-note="C" id="keyC">
+            <span class="kbKey">A</span>
+        </div>
+        <div data-key="87" class="key sharp" data-note="C#">
+            <span class="kbKey">W</span>
+        </div>
+        <div data-key="83" class="key" data-note="D">
+            <span class="kbKey">S</span>
+        </div>
+        <div data-key="69" class="key sharp" data-note="D#">
+            <span class="kbKey">E</span>
+        </div>
+        <div data-key="68" class="key" data-note="E">
+            <span class="kbKey">D</span>
+        </div>
+        <div data-key="70" class="key" data-note="F">
+            <span class="kbKey">F</span>
+        </div>
+        <div data-key="84" class="key sharp" data-note="F#">
+            <span class="kbKey">T</span>
+        </div>
+        <div data-key="71" class="key" data-note="G">
+            <span class="kbKey">G</span>
+        </div>
+        <div data-key="89" class="key sharp" data-note="G#">
+            <span class="kbKey">Y</span>
+        </div>
+        <div data-key="72" class="key" data-note="A">
+            <span class="kbKey">H</span>
+        </div>
+        <div data-key="85" class="key sharp" data-note="A#">
+            <span class="kbKey">U</span>
+        </div>
+        <div data-key="74" class="key" data-note="B">
+            <span class="kbKey">J</span>
+        </div>
+        <div data-key="75" class="key" data-note="C">
+            <span class="kbKey">K</span>
+        </div>
+        <div data-key="79" class="key sharp" data-note="C#">
+            <span class="kbKey">O</span>
+        </div>
+        <div data-key="76" class="key" data-note="D">
+            <span class="kbKey">L</span>
+        </div>
+        <div data-key="80" class="key sharp" data-note="D#">
+            <span class="kbKey">P</span>
+        </div>
+        <div data-key="186" class="key" data-note="E">
+            <span class="kbKey">;</span>
+        </div>
+      </div>
 
+      <audio data-key="65" id="k65" data-note="C" src="http://carolinegabriel.com/demo/js-keyboard/sounds/040.wav"></audio>
+      <audio data-key="87" id="k87" data-note="C#" src="http://carolinegabriel.com/demo/js-keyboard/sounds/041.wav"></audio>
+      <audio data-key="83" id="k83" data-note="D" src="http://carolinegabriel.com/demo/js-keyboard/sounds/042.wav"></audio>
+      <audio data-key="69" id="k69" data-note="D#" src="http://carolinegabriel.com/demo/js-keyboard/sounds/043.wav"></audio>
+      <audio data-key="68" id="k68" data-note="E" src="http://carolinegabriel.com/demo/js-keyboard/sounds/044.wav"></audio>
+      <audio data-key="70" id="k70" data-note="F" src="http://carolinegabriel.com/demo/js-keyboard/sounds/045.wav"></audio>
+      <audio data-key="84" id="k84" data-note="F#" src="http://carolinegabriel.com/demo/js-keyboard/sounds/046.wav"></audio>
+      <audio data-key="71" id="k71" data-note="G" src="http://carolinegabriel.com/demo/js-keyboard/sounds/047.wav"></audio>
+      <audio data-key="89" id="k89" data-note="G#" src="http://carolinegabriel.com/demo/js-keyboard/sounds/048.wav"></audio>
+      <audio data-key="72" id="k72" data-note="A" src="http://carolinegabriel.com/demo/js-keyboard/sounds/049.wav"></audio>
+      <audio data-key="85" id="k85" data-note="A#" src="http://carolinegabriel.com/demo/js-keyboard/sounds/050.wav"></audio>
+      <audio data-key="74" id="k74" data-note="B" src="http://carolinegabriel.com/demo/js-keyboard/sounds/051.wav"></audio>
+      <audio data-key="75" id="k75" data-note="C" src="http://carolinegabriel.com/demo/js-keyboard/sounds/052.wav"></audio>
+      <audio data-key="79" id="k79" data-note="C#" src="http://carolinegabriel.com/demo/js-keyboard/sounds/053.wav"></audio>
+      <audio data-key="76" id="k76" data-note="D" src="http://carolinegabriel.com/demo/js-keyboard/sounds/054.wav"></audio>
+      <audio data-key="80" id="k80" data-note="D#" src="http://carolinegabriel.com/demo/js-keyboard/sounds/055.wav"></audio>
+      <audio data-key="186" id="k186" data-note="E" src="http://carolinegabriel.com/demo/js-keyboard/sounds/056.wav"></audio>
+    </section>
+
+
+    <script defer type="text/javascript" src="appscripts/main.js"></script>
   </div>
   
   

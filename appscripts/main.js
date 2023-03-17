@@ -57,6 +57,13 @@ noteMessage.innerHTML = "A guide to home:" + "<br>" + "<br>" + "1. Complete thre
                         "3. Choose the location that you think is the home and enter the code"
                         + "<br>" + "<br>" + "Press and hold '/' for the guide again.";
 
+let mainPiano = document.getElementById("mainPiano");
+/* mainPiano.style.display = "none"; */
+let listen = document.createElement("button");
+    listen.className = "button";
+    listen.id = "lisbutton";
+    listen.innerHTML = "Listen";
+    
 let gameState = 0;
 
 // initial click event listener to change text
@@ -241,12 +248,7 @@ function playGames() {
 
 
 // ------- GAME 2 - play the keys according to the music
-let mainPiano = document.getElementById("mainPiano");
-/* mainPiano.style.display = "none"; */
-let listen = document.createElement("button");
-    listen.className = "button";
-    listen.id = "lisbutton";
-    listen.innerHTML = "Listen";
+
 
 // creating the function for game 2 whereby clicking the button will produce piano keys
 game2.addEventListener('click', function(){

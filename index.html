@@ -19,16 +19,29 @@
       </div>
 
       <div id="content"></div>
-      <canvas id="catchGame"></canvas>
+      <canvas id="canvas"></canvas>
+      <canvas id="canvasBack"></canvas>
 
+      <section id="rgbSection">
+        <div id="rgbBGOri"></div>
+        <div id="rgbBG"></div>
+        <div id="rgbTextDiv">
+        <p class="rgbText">R<input type="range" min="0" max="255" step="1" value="0" id="rValue" oninput="rgbSlider();"></p>
+        <p class="rgbText">G<input type="range" min="0" max="255" step="1" value="0" id="gValue" oninput="rgbSlider();"></p>
+        <p class="rgbText">B<input type="range" min="0" max="255" step="1" value="0" id="bValue" oninput="rgbSlider();"></p>
+        </div>
+        <p id="rgbValues">RGB (0, 0, 0)</p>
+      </section>
+      
       <div id="click2ContDiv">
         <p id="click2Cont">Click to continue.</p>
       </div>
 
     </div>
 
-    <div class="child2">
+    <div class="child2" id="bgmDiv">
       <p id="soundClick">🎶 Click here to start/stop the background music. 🎶</p>
+      <audio id="bgm" src="resources/lostforest.mp3" loop="loop"></audio>
     </div>
 
     <!-- html from session 06 practice -->

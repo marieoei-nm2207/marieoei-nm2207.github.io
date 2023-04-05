@@ -6,6 +6,7 @@ html {
 
 body {
     background-image: url("../resources/forestBG.jpg");
+    background-size: cover;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     color: white;
@@ -37,6 +38,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
+    z-index: 1;
 }
 
 /* glass morphism code from https://hype4.academy/tools/glassmorphism-generator */
@@ -52,7 +54,7 @@ body {
     position: absolute;
     justify-content: center;
     top: 5%;
-    z-index: 1; /* Lower than buttonContainer */
+    z-index: 2; /* Lower than buttonContainer */
 }
 
 .child2 {
@@ -66,10 +68,7 @@ body {
     height: 10%;
     position: absolute;
     bottom: 5%;
-}
-
-#content {
-    position: absolute;
+    z-index: 2;
 }
 
 h1 {
@@ -100,7 +99,9 @@ h1 {
 #click2Cont {
     color: rgb(7, 65, 30);
     position: relative;
-    margin: auto;
+    /* margin: auto;
+    font-size: 16px;
+    font-weight: normal; */
 }
 
 #click2ContDiv {
@@ -135,6 +136,7 @@ h1 {
     color: rgb(255, 255, 255);
     transition-duration: 0.4s;
     cursor: pointer;
+    z-index: 112;
 }
 
 .gbutton:hover, .button:hover {
@@ -142,9 +144,26 @@ h1 {
     color: rgb(54, 98, 68);
 }
 
+.hbutton{
+    background-color: rgb(23, 66, 116);
+    border-radius: 20px;
+    width: 150px;
+    height: 50px;
+    padding: 0;
+    margin: 50px;
+    color: rgb(224, 235, 255);
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.hbutton:hover {
+    background-color: rgb(224, 235, 255); /* Green */
+    color: rgb(23, 66, 116);
+}
+
 #buttonContainer {
     position: relative; /* Ensure the z-index works */
-    z-index: 115; /* Higher than child1 */
+    z-index: 110; /* Higher than child1 */
   }
 
 #buttonToHome {
@@ -159,13 +178,36 @@ h1 {
     cursor: pointer;
 }
 
+#chooseHomeButton {
+    background-color: rgb(224, 235, 255);
+    border-color: rgb(23, 66, 116);
+    border-radius: 20px;
+    width: 200px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 0;
+    margin: 50px;
+    margin-bottom: 200px;
+    color: rgb(23, 66, 116);
+    transition-duration: 0.4s;
+    transition: border .2s ease-in-out, box-shadow .2s ease-in-out;
+    cursor: pointer;
+}
+
+#chooseHomeButton:hover {
+    background-color: rgb(23, 66, 116);
+    border-color: rgb(224, 235, 255);
+    color: rgb(224, 235, 255);
+}
+
 .parent > #blob {
     position: relative;
     background-position-y: top;
     z-index: 10; /* Higher than buttonContainer and child1 */
 }
 
-.blobName {
+.textInput {
     display: block;
     position: relative;
     background: transparent;
@@ -177,6 +219,14 @@ h1 {
     width: 40%;
     z-index: 1000;
     text-align: center;
+}
+
+#codeInput {
+    margin-bottom: 10%;
+    background-color: rgba(250, 250, 250, 0.5);
+    border-bottom: 2px solid rgb(54, 98, 68);
+    color: rgb(54, 98, 68);
+    font-size: 48px;
 }
 
 #blob {
@@ -191,6 +241,7 @@ h1 {
     margin-bottom: 50px;
     position: absolute;
     z-index: 200;
+    align-items: flex-start;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -213,6 +264,7 @@ h1 {
     position: relative;
     margin: auto;
     margin-top: 50%;
+    z-index: 201;
 }
 
 .message {
@@ -222,13 +274,14 @@ h1 {
     margin-right: 5%;
     color: white;
     font-family: 'Courier New', Courier, monospace;
+    z-index: 202;
 }
 
 /* css from session 06 practice */
 .keys {
     display: block;
     width: 100%;
-    height: 250px;
+    height: 230px;
     max-width: 880px;
     position: relative;
     margin: 40px auto 0;
@@ -298,18 +351,83 @@ h1 {
     opacity: 1;
     position: absolute;
     bottom: 7px;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 #mainPiano {
     width: 60%;
-    height: 35%;
+    height: 30%;
     margin: auto;
     display: none;
+    cursor: default;
 }
 
-#scoreText {
-    font-size: 48px;
-    color: rgb(0, 0, 0);
-    opacity: 0.5;
+#rgbBGOri {
+    background-color: black;
+    display: block;
+    position: absolute;
+    height: 150px;
+    width: 30%;
+    margin: auto;
+    right: 60%;
+    z-index: 22;
+}
+
+#rgbBG {
+    background-color: black;
+    display: inline-block;
+    position: absolute;
+    height: 150px;
+    width: 30%;
+    margin: auto;
+    left: 60%;
+    z-index: 22;
+}
+
+/* #rgbSlider {
+    position: relative;
+    margin-right: 10%;
+    display: block;
+} */
+
+#rgbValues {
+    display: block;
+    z-index: 23;
+}
+
+.rgbText {
+    display: block;
+    margin-right: 10px;
+    z-index: 23;
+    text-shadow: -1px 0 5px #00000070;
+}
+
+#rgbTextDiv {
+    display: block;
+    margin: auto;
+}
+
+#rValue, #gValue, #bValue {
+    display: inline-block;
+    position: relative;
+    z-index: 23;
+}
+
+#rgbSection {
+    display: none;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* #rgbMiniSec {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-height: 50%;
+} */
+
+#rgbBGOri, #rgbBG {
+    display: inline-block;
+    vertical-align: middle;
 }

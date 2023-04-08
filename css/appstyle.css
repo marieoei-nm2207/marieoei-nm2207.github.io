@@ -260,6 +260,7 @@ h1 {
     height: 250px;
     width: 50%;
     background-color: #784b13;
+    align-items: center;
     display: flex;
     position: relative;
     margin: auto;

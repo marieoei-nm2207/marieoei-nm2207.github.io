@@ -469,7 +469,7 @@ function rgbSuccess() {
 
         mainText.innerHTML = "Here's your clue and number.";
         mainText.style.fontSize = "36px";
-        secText.innerHTML = "Click to continue.";
+        secText.innerHTML = "Click on the note to continue.";
 
         clue1();
     }
@@ -587,7 +587,7 @@ function keyTune() {
 
                 mainText.innerHTML = "Here's your clue and number.";
                 mainText.style.fontSize = "36px";
-                secText.innerHTML = "Click to continue.";
+                secText.innerHTML = "Click on the note to continue.";
                 game2Over = true;
                 userKeys = [];
                 
@@ -600,26 +600,6 @@ function keyTune() {
             }
         }
     });
-}
-
-function clue2() {
-        // if the user's key presses match the correct sequence, show the clue and number 
-        content.appendChild(note);
-        note.appendChild(noteMessage);
-        note.style.backgroundColor = "rgb(51, 102, 14)";
-        note.style.color = "rgb(130, 95, 0)";
-        noteMessage.innerHTML = "It looks cool;" + "<br>" + "<br>" + "2";
-        noteMessage.style.textAlign = "center";
-        noteMessage.style.fontSize = "24px";
-        noteMessage.style.margin = "auto";
-
-        /* console.log("clue 2 printed"); */
-
-        gameState = 4;
-        clickBlob3();
-
-        game2.style.backgroundColor = "rgb(116, 140, 124)";
-        game2.style.color = "white";
 }
 
 function playNote(e){
@@ -635,6 +615,31 @@ function playNote(e){
         audio.currentTime=0;
         audio.play();
     }  
+}
+
+function clue2() {
+    // if the user's key presses match the correct sequence, show the clue and number 
+    content.appendChild(note);
+    note.appendChild(noteMessage);
+    note.style.backgroundColor = "rgb(51, 102, 14)";
+    note.style.color = "rgb(130, 95, 0)";
+    noteMessage.innerHTML = "It looks cool;" + "<br>" + "<br>" + "2";
+    noteMessage.style.textAlign = "center";
+    noteMessage.style.fontSize = "24px";
+    noteMessage.style.margin = "auto";
+
+    /* console.log("clue 2 printed"); */
+
+    closeClue2();
+}
+
+function closeClue2() {
+    note.addEventListener('click', function(){
+        gameState = 4;
+        clickBlob3();
+        game2.style.backgroundColor = "rgb(116, 140, 124)";
+        game2.style.color = "white";
+    })
 }
 
 // ------- GAME 3 - collect/sort out the berries
@@ -903,7 +908,7 @@ function playBerries() {
 
 			mainText.innerHTML = "Here's your clue and number.";
 			mainText.style.fontSize = "36px";
-			secText.innerHTML = "Click to continue.";
+			secText.innerHTML = "Click on the note to continue.";
 			secText.style.margin = "auto";
 
 			clue3();
@@ -922,8 +927,8 @@ function clue3() {
     noteMessage.innerHTML = "your socks probably won't get soggy;" + "<br>" + "<br>" + "0";
     noteMessage.style.textAlign = "center";
     noteMessage.style.fontSize = "24px";
-    noteMessage.style.marginLeft = "5%";
-    noteMessage.style.marginRight = "5%";
+    noteMessage.style.marginLeft = "8%";
+    noteMessage.style.marginRight = "8%";
 
     /* console.log("clue 3 printed"); */
 

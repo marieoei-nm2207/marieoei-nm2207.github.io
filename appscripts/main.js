@@ -57,11 +57,19 @@ let note = document.createElement("div");
 note.className = "note";
 /* note.style.display = "none"; */
 let noteMessage = document.createElement("p");
-noteMessage.className = "message";
-noteMessage.innerHTML = "A guide to home:" + "<br>" + "<br>" + "1. Complete three mini games"+ "<br>" + 
-                        "2. Get clues and numbers that form a code for the location from the games" + "<br>" + 
-                        "3. Choose the location that you think is the home and enter the code"
-                        + "<br>" + "<br>" + "Press and hold '/' for the guide again.";
+
+function defaultNote() {
+    noteMessage.className = "message";
+    noteMessage.innerHTML = "A guide to home:" + "<br>" + "<br>" + "1. Complete three mini games"+ "<br>" + 
+                            "2. Get clues and numbers that form a code for the location from the games" + "<br>" + 
+                            "3. Choose the location that you think is the home and enter the code"
+                            + "<br>" + "<br>" + "Press and hold '/' to see the guide again.";
+    note.style.backgroundColor = "rgb(120, 75, 19)";
+    noteMessage.style.textAlign = "left";
+    noteMessage.style.fontSize = "16px";
+    noteMessage.style.margin = "5%";
+}
+
 
 let gameState = 0;
 
@@ -186,6 +194,7 @@ function clickBlob2() {
                 
                 content.appendChild(note);
                 note.appendChild(noteMessage);
+                defaultNote();
                 secText.innerHTML = "Click the note to close and continue.";
                 
                 note.addEventListener('click', function(){
@@ -204,13 +213,19 @@ document.body.addEventListener('keydown', function(e){
     if (e.keyCode == 191) {
         content.appendChild(note);
         note.appendChild(noteMessage);
-        /* note.style.display = "flex"; */
+        game1.style.display = "none";
+        game2.style.display = "none";
+        game3.style.display = "none";
     }
 });
 document.body.addEventListener('keyup', function(e){
     if (e.keyCode == 191) {
         noteMessage.remove();
         note.remove();
+
+        game1.style.display = "inline-block";
+        game2.style.display = "inline-block";
+        game3.style.display = "inline-block";
     }
 });
 
@@ -496,7 +511,8 @@ function closeClue1() {
         clickBlob3();
         game1.style.backgroundColor = "rgb(116, 140, 124)";
         game1.style.color = "white";
-    })
+        defaultNote();
+    });
 }
 
 
@@ -639,6 +655,7 @@ function closeClue2() {
         clickBlob3();
         game2.style.backgroundColor = "rgb(116, 140, 124)";
         game2.style.color = "white";
+        defaultNote();
     })
 }
 
@@ -941,6 +958,7 @@ function closeClue3() {
         clickBlob3();
         game3.style.backgroundColor = "rgb(116, 140, 124)";
         game3.style.color = "white";
+        defaultNote();
     })
 }
 
